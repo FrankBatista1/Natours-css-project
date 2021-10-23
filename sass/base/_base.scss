@@ -1,0 +1,21 @@
+
+/* 
+Universal selector every element on the page (removes the default padding and margin of a website 
+border-box => permits add border without adding more margin/padding
+*/
+
+*,
+* ::after,
+* ::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //Defines rem
+  font-size: 62.5%;
+}
+body{
+  box-sizing: border-box;
+}
