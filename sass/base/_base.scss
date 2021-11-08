@@ -12,8 +12,20 @@ border-box => permits add border without adding more margin/padding
   box-sizing: inherit;
 }
 html {
-  //Defines rem
-  font-size: 62.5%;
+  // Defines rem
+  font-size: 62.5%; //10px
+
+  @include respond(tab-land) { 
+      font-size: 56.25%; //9px
+  }
+
+  @include respond(tab-port) { 
+      font-size: 50%; // 8px
+  }
+  
+  @include respond(big-desktop) {
+      font-size: 75%; //12px
+  }
 }
 body{
   box-sizing: border-box;
