@@ -1,3 +1,16 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+1em = 16px
+*/
 /* properties related to font are usually inherent to the child  */
 body {
   font-family: "Lato", sans-serif;
@@ -5,7 +18,6 @@ body {
   /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 3rem;
 }
 
 .heading-primary {
@@ -23,6 +35,11 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
+@media only screen and (max-width: 37.5em) {
+  .heading-primary--main {
+    letter-spacing: 1.2rem;
+  }
+}
 .heading-primary--sub {
   display: block;
   font-size: 1.6rem;
@@ -31,6 +48,11 @@ body {
   animation-name: moveInRight;
   animation-duration: 1s;
   animation-timing-function: ease-out;
+}
+@media only screen and (max-width: 37.5em) {
+  .heading-primary--sub {
+    letter-spacing: 0.8rem;
+  }
 }
 
 .heading-secundary {
@@ -44,6 +66,16 @@ body {
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.2s;
+}
+@media only screen and (max-width: 56.25em) {
+  .heading-secundary {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .heading-secundary {
+    font-size: 2rem;
+  }
 }
 .heading-secundary:hover {
   transform: skewY(-2deg) skewX(-10deg);
@@ -78,9 +110,30 @@ border-box => permits add border without adding more margin/padding
 html {
   font-size: 62.5%;
 }
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+}
+@media only screen and (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
 }
 
 @keyframes moveInLeft {
@@ -610,6 +663,12 @@ body {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
 }
+@media only screen and (max-width: 37.5em) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+}
 .header__logo-box {
   position: absolute;
   top: 4rem;
@@ -633,6 +692,11 @@ body {
 .row:not(:last-child) {
   margin-bottom: 8rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}
 .row::after {
   content: "";
   display: table;
@@ -644,6 +708,23 @@ body {
 .row [class^=col-]:not(:last-child) {
   margin-right: 6rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .row [class^=col-]:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 6rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .row [class^=col-] {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+}
 .row .col-1-of-2 {
   width: calc((100% - 6rem) / 2);
 }
@@ -654,13 +735,19 @@ body {
   width: calc((100% - 3 * 6rem) / 4);
 }
 .row .col-2-of-3 {
-  width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem);
+  width: calc(
+      2 * ((100% - 2 * 6rem) / 3) + 6rem
+    );
 }
 .row .col-2-of-4 {
-  width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
+  width: calc(
+      2 * ((100% - 3 * 6rem) / 4) + 6rem
+    );
 }
 .row .col-3-of-4 {
-  width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
+  width: calc(
+      3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem
+    );
 }
 
 .footer {
@@ -668,6 +755,11 @@ body {
   padding: 7rem;
   font-size: 1.4rem;
   color: #f7f7f7;
+}
+@media only screen and (max-width: 56.25em) {
+  .footer {
+    padding: 8rem 0;
+  }
 }
 .footer__logo-box {
   text-align: center;
@@ -681,6 +773,12 @@ body {
   border-top: 1px solid #999;
   padding-top: 2rem;
   display: inline-block;
+}
+@media only screen and (max-width: 56.25em) {
+  .footer__navigation {
+    width: 100%;
+    text-align: center;
+  }
 }
 .footer__list {
   list-style: none;
@@ -710,6 +808,12 @@ body {
   width: 80%;
   float: right;
 }
+@media only screen and (max-width: 56.25em) {
+  .footer__copyright {
+    width: 100%;
+    float: none;
+  }
+}
 
 .navigation__checkbox {
   display: none;
@@ -726,6 +830,18 @@ body {
   text-align: center;
   cursor: pointer;
 }
+@media only screen and (max-width: 56.25em) {
+  .navigation__button {
+    top: 4rem;
+    right: 4rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .navigation__button {
+    top: 3rem;
+    right: 3rem;
+  }
+}
 .navigation__background {
   height: 6rem;
   width: 6rem;
@@ -736,6 +852,18 @@ body {
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: 50;
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+@media only screen and (max-width: 56.25em) {
+  .navigation__background {
+    top: 4.5rem;
+    right: 4.5rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .navigation__background {
+    top: 3.5rem;
+    right: 3.5rem;
+  }
 }
 .navigation__nav {
   height: 100vh;
