@@ -16,18 +16,28 @@
   </head>
   <body>
     <div class="navigation">
-      <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
       <label for="navi-toggle" class="navigation__button">
         <span class="navigation__icon">&nbsp;</span>
       </label>
       <div class="navigation__background">&nbsp;</div>
       <nav class="navigation__nav">
         <ul class="navigation__list">
-          <li class="navigation__item"><a href="#" class="navigation__link">About Natours</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">Your benefits</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">Popular tours</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">Stories</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">Book now</a></li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">About Natours</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Your benefits</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Popular tours</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Stories</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Book now</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -41,7 +51,9 @@
           <span class="heading-primary--main">Outdoors</span>
           <span class="heading-primary--sub">is where life happens</span>
         </h1>
-        <a class="btn btn--white btn--animated" href="#section-tours">Discover our tours</a>
+        <a class="btn btn--white btn--animated" href="#section-tours"
+          >Discover our tours</a
+        >
       </div>
     </header>
     <main>
@@ -76,17 +88,27 @@
           <div class="col-1-of-2">
             <div class="composition">
               <img
-                src="img/nat-1-large.jpg"
-                alt="nature-image-1"
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo 1"
                 class="composition__photo composition__photo--p1"
-              /><img
-                src="img/nat-2-large.jpg"
-                alt="nature-image-2"
+                src="img/nat-1-large.jpg"
+              />
+
+              <img
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo 2"
                 class="composition__photo composition__photo--p2"
-              /><img
-                src="img/nat-3-large.jpg"
-                alt="nature-image-3"
+                src="img/nat-2-large.jpg"
+              />
+
+              <img
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo 3"
                 class="composition__photo composition__photo--p3"
+                src="img/nat-3-large.jpg"
               />
             </div>
           </div>
@@ -361,11 +383,21 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img
-          src="./img/logo-green-2x.png"
-          alt="Full logo"
-          class="footer__logo"
-        />
+        <picture class="footer-logo">
+          <source
+            srcset="
+              ./img/logo-green-small-1x.png 1x,
+              ./img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 37.5em)"
+          />
+          <img
+            srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x"
+            alt="Full logo"
+            class="footer__logo"
+            src="./img/logo-green-2x.png"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">
@@ -391,7 +423,8 @@
         </div>
         <div class="col-1-of-2">
           <p class="footer__copyright">
-            Built by Frank Batista designed by Jonas Schmedman for the "Advanced CSS and Sass: Flexbox, Grid, Animations and More!" in udemy.
+            Built by Frank Batista designed by Jonas Schmedman for the "Advanced
+            CSS and Sass: Flexbox, Grid, Animations and More!" in udemy.
           </p>
         </div>
       </div>
@@ -400,48 +433,29 @@
     <div class="popup" id="popup">
       <div class="popup__content">
         <div class="popup__left">
-          <img class="popup__img" src="./img/nat-8.jpg" alt="Tour photo">
-          <img class="popup__img" src="./img/nat-9.jpg" alt="Tour photo">
+          <img class="popup__img" src="./img/nat-8.jpg" alt="Tour photo" />
+          <img class="popup__img" src="./img/nat-9.jpg" alt="Tour photo" />
         </div>
         <div class="popup__right">
           <a href="#section-tours" class="popup__close">&times;</a>
-          <h2 class="heading-secundary u-margin-bottom-small">Start booking now</h2>
-          <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; please read the terms before booking</h3>
-          <p class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas esse temporibus reprehenderit quia beatae veritatis ipsa officia natus ratione, rem sint nihil assumenda reiciendis earum vel perferendis maxime dolore nemo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ipsam ipsum laborum distinctio, ipsa aliquam nobis libero eos iusto repellendus adipisci culpa impedit saepe veritatis accusantium, placeat consectetur dolore voluptas.</p>
-          <a href="#" class="btn btn--green">Book now
-          </a>
+          <h2 class="heading-secundary u-margin-bottom-small">
+            Start booking now
+          </h2>
+          <h3 class="heading-tertiary u-margin-bottom-small">
+            Important &ndash; please read the terms before booking
+          </h3>
+          <p class="popup__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas esse
+            temporibus reprehenderit quia beatae veritatis ipsa officia natus
+            ratione, rem sint nihil assumenda reiciendis earum vel perferendis
+            maxime dolore nemo! Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Ullam, ipsam ipsum laborum distinctio, ipsa
+            aliquam nobis libero eos iusto repellendus adipisci culpa impedit
+            saepe veritatis accusantium, placeat consectetur dolore voluptas.
+          </p>
+          <a href="#" class="btn btn--green">Book now </a>
         </div>
       </div>
     </div>
-    <!-- 
-      <section>
-      <div class="grid-test">
-       
-        <div class="row">
-          <div class="col-1-of-3">Col 1 of 3</div>
-          <div class="col-1-of-3">Col 1 of 3</div>
-          <div class="col-1-of-3">Col 1 of 3</div>
-        </div>
-        <div class="row">
-          <div class="col-1-of-3">Col 1 of 3</div>
-          <div class="col-2-of-3">Col 2 of 3</div>
-        </div>
-        <div class="row">
-          <div class="col-1-of-4">Col 1 of 4</div>
-          <div class="col-1-of-4">Col 1 of 4</div>
-          <div class="col-1-of-4">Col 1 of 4</div>
-          <div class="col-1-of-4">Col 1 of 4</div>
-        </div>
-        <div class="row">
-          <div class="col-1-of-4">Col 1 of 4</div>
-          <div class="col-1-of-4">Col 1 of 4</div>
-          <div class="col-2-of-4">Col 2 of 4</div>
-        </div>
-        <div class="row">
-          <div class="col-1-of-4">Col 1 of 4</div>
-          <div class="col-3-of-4">Col 3 of 4</div>
-        </div>
-      </div>
-    </section> -->
   </body>
 </html>
