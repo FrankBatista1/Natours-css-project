@@ -7,32 +7,42 @@
 
   &__side {
     height: 53rem;
-    transition: all .8s ease;
+    transition: all 0.8s ease;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     backface-visibility: hidden;
     border-radius: 3px;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
     overflow: hidden;
 
-    &--front{
+    &--front {
       background-color: $color-white;
     }
-    &--back{
+    &--back {
       transform: rotateY(180deg);
-      &--1{
-        background-image: linear-gradient(to right bottom, $color-secundary-light, $color-secundary-dark);
+      &--1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secundary-light,
+          $color-secundary-dark
+        );
       }
-      &--2{
-        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+      &--2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
       }
-      &--3{
-        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+      &--3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
       }
-      
-
     }
   }
 
@@ -51,17 +61,32 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
-    &--1{
-      background-image:  linear-gradient(to right bottom, $color-secundary-light, $color-secundary-dark), url(../img/nat-5.jpg);
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secundary-light,
+          $color-secundary-dark
+        ),
+        url(../img/nat-5.jpg);
     }
-    &--2{
-      background-image:  linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/nat-6.jpg);
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(../img/nat-6.jpg);
     }
-    &--3{
-      background-image:  linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/nat-7.jpg);
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../img/nat-7.jpg);
     }
   }
-  &__heading{
+  &__heading {
     font-size: 2.8rem;
     font-weight: 300;
     text-transform: uppercase;
@@ -69,24 +94,24 @@
     position: absolute;
     top: 0rem;
     right: 1rem;
-    &--1{
+    &--1 {
       color: $color-secundary-dark;
     }
-    &--2{
+    &--2 {
       color: $color-primary-dark;
     }
-    &--3{
+    &--3 {
       color: $color-tertiary-dark;
     }
   }
-  &__details{
+  &__details {
     padding: 3rem;
-    ul{
+    ul {
       list-style: none;
       width: 80%;
       margin: 0 auto;
 
-      li{
+      li {
         text-align: center;
         font-size: $default-font-size;
         padding: 1rem;
@@ -106,17 +131,57 @@
     width: 90%;
     text-align: center;
   }
-  &__price-box{
+  &__price-box {
     text-align: center;
     color: $color-white;
     margin-bottom: 8rem;
   }
-  &__price-only{
+  &__price-only {
     font-size: 1.4rem;
     text-transform: uppercase;
   }
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
+  }
+  @include respond(tab-port) {
+    height: auto;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &__side {
+      height: auto;
+      transition: all 0.8s ease;
+      position: relative;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0);
+        clip-path: polygon(0 11%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+    &__details {
+      padding: 1rem 3rem;
+    }
+
+    &__cta {
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+    &__price-value {
+      font-size: 5rem;
+    }
   }
 }
